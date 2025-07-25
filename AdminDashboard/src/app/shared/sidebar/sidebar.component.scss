@@ -1,0 +1,42 @@
+.sidebar {
+  width: 220px;
+  height: calc(100vh - 60px);
+  position: fixed;
+  top: 60px;
+  left: 0;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  padding-top: 1rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+  z-index: 999;
+
+  aside {
+    .menulist {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .menu-item {
+        padding: 1rem 1.5rem;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.15);
+        }
+
+        &.active {
+          background: rgba(0, 0, 0, 0.2);
+          font-weight: 600;
+          border-left: 4px solid #fff;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
