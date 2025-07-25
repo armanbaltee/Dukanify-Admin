@@ -1,0 +1,53 @@
+/* Global reset */
+:host {
+  display: block;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+}
+
+/* Layout wrapper */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Header */
+app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Sidebar + Main section wrapper */
+.body-section {
+  display: flex;
+  margin-top: 60px; /* height of the header */
+  height: calc(100vh - 60px);
+}
+
+/* Sidebar */
+app-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background: #f9f9f9;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
+}

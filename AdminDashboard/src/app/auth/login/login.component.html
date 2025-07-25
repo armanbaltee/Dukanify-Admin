@@ -1,0 +1,49 @@
+<div class="main">
+  <div class="main-container">
+    <h2>Welcome to Dukanify Admin Panel</h2>
+
+    <form [formGroup]="loginData" (ngSubmit)="login()">
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="Enter email"
+          [ngClass]="{
+            'valid': loginData.get('email')?.valid && (loginData.get('email')?.dirty || loginData.get('email')?.touched),
+            'invalid': loginData.get('email')?.invalid && (loginData.get('email')?.dirty || loginData.get('email')?.touched)
+          }"
+        />
+        <div class="error" *ngIf="loginData.get('email')?.invalid && (loginData.get('email')?.dirty || loginData.get('email')?.touched)">
+          <small *ngIf="loginData.get('email')?.errors?.['required']">Email is required.</small>
+          <small *ngIf="loginData.get('email')?.errors?.['email']">Invalid email format.</small>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Enter password"
+          [ngClass]="{
+            'valid': loginData.get('password')?.valid && (loginData.get('password')?.dirty || loginData.get('password')?.touched),
+            'invalid': loginData.get('password')?.invalid && (loginData.get('password')?.dirty || loginData.get('password')?.touched)
+          }"
+        />
+        <div class="error" *ngIf="loginData.get('password')?.invalid && (loginData.get('password')?.dirty || loginData.get('password')?.touched)">
+          <small *ngIf="loginData.get('password')?.errors?.['required']">Password is required.</small>
+          <small *ngIf="loginData.get('password')?.errors?.['minlength']">
+            Password must be at least 8 characters long.
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" [disabled]="loginData.invalid">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

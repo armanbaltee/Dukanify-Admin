@@ -1,0 +1,38 @@
+<div class="sidebar">
+  <aside>
+    <div class="menulist">
+      <div
+        class="menu-item"
+        routerLink="/dashboard"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <p>Dashboard</p>
+      </div>
+      <div
+        class="menu-item"
+        routerLink="/active-list"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <p>Active List</p>
+      </div>
+      <div
+        class="menu-item"
+        routerLink="/pending-list"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <p>Pending List</p>
+      </div>
+      <div
+        class="menu-item"
+        routerLink="/reject-list"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <p>Reject List</p>
+      </div>
+    </div>
+  </aside>
+</div>
