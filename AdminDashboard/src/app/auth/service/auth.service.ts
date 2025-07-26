@@ -22,4 +22,7 @@ export class AuthService {
     return localStorage.getItem('token')
    }
    
+   getPendinglistApiCall(){
+    return this.http.get(`${this.loginUrl}/getpending`)
+   }
 }
