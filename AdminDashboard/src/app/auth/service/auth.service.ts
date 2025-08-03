@@ -22,7 +22,15 @@ export class AuthService {
     return localStorage.getItem('token')
    }
    
-   getPendinglistApiCall(){
-    return this.http.get(`${this.loginUrl}/getpending`)
+   getStorelistApiCall(){
+    return this.http.get(`${this.loginUrl}/getallstore`)
+   }
+
+   acceptRequestApiCall(storeId:any){
+    return this.http.put(`${this.loginUrl}/acceptrequest/${storeId}`, {})
+   }
+
+   rejectRequestApiCall(storeId:any){
+    return this.http.put(`${this.loginUrl}/rejectrequest/${storeId}`, {})
    }
 }

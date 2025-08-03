@@ -1,0 +1,20 @@
+<div class="list-card">
+  <div class="list-row">
+    <div class="store-logo">
+      <img [src]="logo" alt="store logo">
+    </div>
+    <div class="store-name">
+      <p>Store Name: {{storeName}}</p>
+    </div>
+    <div class="owner-name">
+      <p>Owner: {{ownerName}}</p>
+    </div>
+    <div class="state pending">
+      <p>{{status}}</p>
+    </div>
+    <div *ngIf="!isStoreVerified">
+      <button class="accept" (click)="acceptStore(storeId)">Accept</button>
+    <button class="reject" (click)="rejectStore(storeId)">Reject</button>
+    </div>
+  </div>
+</div>

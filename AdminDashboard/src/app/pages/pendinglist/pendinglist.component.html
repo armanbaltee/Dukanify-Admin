@@ -1,1 +1,18 @@
-<p>pendinglist works!</p>
+<div class="list-card">
+  <div class="no-record" *ngIf="stores.length === 0">
+    <p>No record found</p>
+  </div>
+
+  <div class="record-found" *ngIf="stores.length > 0">
+    <app-listcard 
+      *ngFor="let store of stores"
+      [logo]="store.logo"
+      [storeName]="store.storeName"
+      [ownerName]="store.ownerName"
+      [isStoreVerified]="store.isStoreVerified"
+      [storeId]="store.id"
+      [status]="status"
+      (storeActionCompleted)="getPendingList()"
+    ></app-listcard>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/service/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -7,15 +7,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './pendinglist.component.html',
   styleUrls: ['./pendinglist.component.scss']
 })
-export class PendinglistComponent {
+export class PendinglistComponent implements OnInit{
 
-  pendingUserList:[] = [];
+  stores:any[] = [];
+  status: string = 'pending'
   constructor(private dashboardService: AuthService, private snackBar: MatSnackBar){ }
 
+  ngOnInit(): void {
+    this.getPendingList();
+  }
+
   getPendingList(){
-    this.dashboardService.getPendinglistApiCall().subscribe({
+    this.dashboardService.getStorelistApiCall().subscribe({
       next: (res:any)=>{
-        this.pendingUserList = res.data;
+        this.stores = res.data.filter((store:any)=> store.isStoreVerified===false);
+        console.log("List: ",this.stores)
         this.snackBar.open('Successfully get pending list', 'Close', {
           duration: 3000,
           panelClass: ['success-snackbar']
