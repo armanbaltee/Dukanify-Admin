@@ -16,6 +16,7 @@ import { PendinglistComponent } from './pages/pendinglist/pendinglist.component'
 import { ActivelistComponent } from './pages/activelist/activelist.component';
 import { RejectlistComponent } from './pages/rejectlist/rejectlist.component';
 import { InactivelistComponent } from './pages/inactivelist/inactivelist.component';
+import { ListcardComponent } from './shared/listcard/listcard.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { InactivelistComponent } from './pages/inactivelist/inactivelist.compone
     PendinglistComponent,
     ActivelistComponent,
     RejectlistComponent,
-    InactivelistComponent
+    ListcardComponent,
   ],
   imports: [
     BrowserModule,
